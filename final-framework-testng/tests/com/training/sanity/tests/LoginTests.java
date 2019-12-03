@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -37,7 +38,7 @@ public class LoginTests {
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
-		driver.get(baseUrl);
+		driver.get("http://elearningm1.upskills.in/");
 	}
 	
 	@AfterMethod
@@ -47,9 +48,18 @@ public class LoginTests {
 	}
 	@Test
 	public void validLoginTest() {
-		loginPOM.sendUserName("admin");
+		/*loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("First");*/
+		loginPOM.clickForgotPwdBtn();
+		loginPOM.UsrnmeEmailadd();
+		loginPOM.clksendmsg();
+		loginPOM.getmsg();
+		String Expected= "Your password has been emailed to you. Message should get displayed in login screen";
+		Assert.assertEquals(loginPOM.getmsg(), Expected);
+		//System.out.println(loginPOM.getmsg());
+		
+		
 	}
 }
