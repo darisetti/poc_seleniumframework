@@ -100,14 +100,29 @@ public class LoginPOMMediumcases {
 	@FindBy (id="user_to_add")
 	private WebElement usersearch;
 	
-	@FindBy (xpath="//*[@id='ajax_list_users_single']/a")
-	
+	@FindBy (linkText="Kumar Sunil (sunil)")
+	//'Kumar Sunil (sunil)  '
+	//id="user_to_add"
+	////*[@id='ajax_list_users_single']/a
 	////a[@href='javascript: void(0);']
 	//a[@onclick='javascript: add_user_to_session('309','Kumar Sunil (sunil)  ')']
 	private WebElement userselect;
 	
 	@FindBy (name="next")
 	private WebElement finishsessioncreation;
+	
+	//////////////////////////////////////////
+	@FindBy (xpath="//a[@href='course_category.php']")
+	private WebElement coursescategories;
+	
+	@FindBy (xpath="//img[@src='http://elearningm1.upskills.in/main/img/icons/32/new_folder.png']")
+	private WebElement addcategory;
+	
+	@FindBy (id="course_category_code")
+	private WebElement categorycode;
+	
+	@FindBy (name="course_category_name")
+	private WebElement categoryname;
 	
 	
 	public void adminusername1(String username){
@@ -195,7 +210,7 @@ public class LoginPOMMediumcases {
 	}
 	
 	public void sessionnameenter1(){
-		sessionnameenter.sendKeys("selenium training67");
+		sessionnameenter.sendKeys("selenium training100");
 	}
 	
 	public void coachnameenter1() throws InterruptedException{
@@ -243,6 +258,30 @@ public class LoginPOMMediumcases {
 	public void finishsessioncreation1(){
 		finishsessioncreation.click();
 	}
+	
+	public void coursescategories1(){
+		coursescategories.click();
+	}
+	
+	public void addcategory1(){
+		addcategory.click();
+	}
+	
+	public void categorycode1(String categoryCode){
+		categorycode.sendKeys(categoryCode);
+	}
+	
+	public void categoryname1(String categoryName){
+		categoryname.sendKeys(categoryName);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 }

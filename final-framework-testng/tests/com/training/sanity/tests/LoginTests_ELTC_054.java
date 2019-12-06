@@ -20,11 +20,12 @@ import com.training.pom.LoginPOMMediumcases;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 import com.training.pom.LoginPOMMediumcases_TC53;
+import com.training.pom.LoginPOMMediumcases_TC_54;
 
-public class LoginTests_ELTC_053 {
+public class LoginTests_ELTC_054 {
 	private WebDriver driver;
 	private String baseUrl;
-	private LoginPOMMediumcases_TC53 loginPOMMediumcases_tc53;
+	private LoginPOMMediumcases_TC_54 loginPOMMediumcases_tc54;
 	private static Properties properties;
 	private ScreenShot screenShot;	
 	
@@ -46,7 +47,8 @@ public class LoginTests_ELTC_053 {
 		http://elearningm1.upskills.in/main/admin/
 */		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		Precondition_ELTC_005.precondition(driver);
-		loginPOMMediumcases_tc53 = new LoginPOMMediumcases_TC53(driver); 
+		loginPOMMediumcases_tc54 = new LoginPOMMediumcases_TC_54(driver); 
+		
 		
 	}
 	
@@ -56,47 +58,55 @@ public class LoginTests_ELTC_053 {
 		//driver.quit();
 	}*/
 	@Test
-	public void validLoginTests() {
-		String expectedfirstname="Mausumi";
-		String expectedlastname="Acharya";
-		String expectedfirstconnection="Nov 09, 2019";
-		String expectedlastlogin="Nov 09, 2019";
-		String expectedheadername="Mausumi Acharya";
-		String expectedstudentname="Mausumi Acharya (Mausumi)";
-		String expectedstudentemail="mausumi.ac2@gmail.com";
+	public void validLoginTests() throws InterruptedException {
+		String expectedfirstname="manzoor";
+		String expectedlastname="mehadi";
+		String expectedfirstconnection="Jun 24, 2019";
+		String expectedlastlogin="Jul 10, 2019";
+		String expectedheadername="manzoor mehadi";
+		String expectedteachername="manzoor mehadi (manzoor)";
+		String expectedteacheremail="manzoor@gmail.com";
 		String expectedcourseheader="Courses";
 		String expectedsuccessfullmsg ="Your message has been sent.";
 		
-		loginPOMMediumcases_tc53.reporting1();
-		loginPOMMediumcases_tc53.followedstudents1();
-		loginPOMMediumcases_tc53.searchstudent();
-		String actualfirstname=loginPOMMediumcases_tc53.actualfirstname();
+		loginPOMMediumcases_tc54.reporting1();
+		loginPOMMediumcases_tc54.followedteachers1();
+		loginPOMMediumcases_tc54.searchteacher();
+		String actualfirstname=loginPOMMediumcases_tc54.actualfirstname();
 		System.out.println("FIrstname on UI"+actualfirstname);
-		String atuallastname=loginPOMMediumcases_tc53.actuallastname();
+		String atuallastname=loginPOMMediumcases_tc54.actuallastname();
 		System.out.println("Lastnameon UI"+atuallastname);
-		String actualfirstconnection=loginPOMMediumcases_tc53.actualfirstconnection();
+		String actualfirstconnection=loginPOMMediumcases_tc54.actualfirstconnection();
 		System.out.println("firstconnectionon UI"+actualfirstconnection);
-		String actuallatestlogin=loginPOMMediumcases_tc53.actuallatestlogin();
+		String actuallatestlogin=loginPOMMediumcases_tc54.actuallatestlogin();
 		System.out.println("latestlogin UI"+actuallatestlogin);
 		Assert.assertEquals(actualfirstname, expectedfirstname);
 		Assert.assertEquals(atuallastname, expectedlastname);
 		Assert.assertEquals(actualfirstconnection, expectedfirstconnection);
 		Assert.assertEquals(actuallatestlogin, expectedlastlogin);
-		loginPOMMediumcases_tc53.clickdetailsicon();
-		String actualheadername= loginPOMMediumcases_tc53.actualstudentheadername();
+		loginPOMMediumcases_tc54.clickdetailsicon();
+		String actualheadername= loginPOMMediumcases_tc54.actualstudentheadername();
 		System.out.println("Name in header "+actualheadername);
-		String actualstudentname=loginPOMMediumcases_tc53.actualstudentname();
-		System.out.println("Name "+actualstudentname);
-		String actualstudentemail=loginPOMMediumcases_tc53.actualstudentemail();
-		System.out.println("email is "+actualstudentemail);
+		String actualteacername=loginPOMMediumcases_tc54.actualteachername();
+		System.out.println("Name "+actualteacername);
+		String actualteacheremail=loginPOMMediumcases_tc54.actualteacheremail();
+		System.out.println("email is "+actualteacheremail);
 		Assert.assertEquals(actualheadername, expectedheadername);
-		Assert.assertEquals(actualstudentname, expectedstudentname);
-		Assert.assertEquals(actualstudentemail, expectedstudentemail);
-		loginPOMMediumcases_tc53.clickcourselink();
-		loginPOMMediumcases_tc53.sendemail();
-		String actualsuccessfullmsg=loginPOMMediumcases_tc53.sendemail();
+		Assert.assertEquals(actualteacername, expectedteachername);
+		Assert.assertEquals(actualteacheremail, expectedteacheremail);
+		loginPOMMediumcases_tc54.clickcourselink();
+		loginPOMMediumcases_tc54.sendemail();
+		String actualsuccessfullmsg=loginPOMMediumcases_tc54.sendemail();
 		System.out.println("message is "+actualsuccessfullmsg);
 		Assert.assertEquals(actualsuccessfullmsg, expectedsuccessfullmsg);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

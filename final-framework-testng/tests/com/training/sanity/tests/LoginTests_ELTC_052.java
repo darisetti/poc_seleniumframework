@@ -76,8 +76,8 @@ public class LoginTests_ELTC_052 {
 		loginPOMMediumcases.clksavebtn1();
 		loginPOMMediumcases.rightarrowclk1();
 		loginPOMMediumcases.clknextbtn1();
-		//loginPOMMediumcases.usersearch1("Sunil");
-		//loginPOMMediumcases.finishsessioncreation1();
+		loginPOMMediumcases.usersearch1("Sunil");
+		loginPOMMediumcases.finishsessioncreation1();
 	}
 
 	private void Assert(String actual, String expected) {
